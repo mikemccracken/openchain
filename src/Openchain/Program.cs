@@ -10,7 +10,7 @@ namespace Openchain
         public static void Main(string[] args) =>
             new WebHostBuilder()
             .UseKestrel()
-            .UseContentRoot(Directory.GetCurrentDirectory())
+            .UseContentRoot(Environment.GetEnvironmentVariable("HOME"))
             .UseIISIntegration()
             .UseStartup<Startup>()
             .Build()
